@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="3631763033">
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;registerValue&apos; is reassigned a value before the old one has been used." verbose="Variable &apos;registerValue&apos; is reassigned a value before the old one has been used." cwe="563">
+            <location file="src/chip_control.c" line="194" column="19" info="registerValue is overwritten"/>
+            <location file="src/chip_control.c" line="189" column="19" info="registerValue is assigned"/>
+            <symbol>registerValue</symbol>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &apos;registerValue&apos; is less than zero." verbose="The unsigned expression &apos;registerValue&apos; will never be negative so it is either pointless or an error to check if it is." cwe="570">
+            <location file="src/chip_control.c" line="183" column="28" info="Unsigned less than zero"/>
+            <symbol>registerValue</symbol>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &apos;registerValue&apos; is less than zero." verbose="The unsigned expression &apos;registerValue&apos; will never be negative so it is either pointless or an error to check if it is." cwe="570">
+            <location file="src/chip_control.c" line="199" column="28" info="Unsigned less than zero"/>
+            <symbol>registerValue</symbol>
+        </error>
+  <FileInfo check="ctu">
+<function-call call-id="src/ltc2943.h:14:6" call-funcname="LTC2943_Write" call-argnr="2" file="src/chip_control.c" line="11" col="21" call-argexpr="&regAddress" call-argvaluetype="7" call-argvalue="1"/><function-call call-id="src/ltc2943.h:14:6" call-funcname="LTC2943_Write" call-argnr="2" file="src/chip_control.c" line="32" col="21" call-argexpr="writeBuff" call-argvaluetype="7" call-argvalue="256"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="84" col="33" call-argexpr="&adcMode" call-argvaluetype="7" call-argvalue="1"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="84" col="33" call-argexpr="adcMode" call-argvaluetype="4" call-argvalue="0"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="105" col="33" call-argexpr="&currentRegB" call-argvaluetype="7" call-argvalue="1"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="105" col="33" call-argexpr="currentRegB" call-argvaluetype="4" call-argvalue="0"/><function-call call-id="src/chip_control.c:23:13" call-funcname="ChipControl_WriteRegister" call-argnr="2" file="src/chip_control.c" line="117" col="34" call-argexpr="&newRegB" call-argvaluetype="7" call-argvalue="1"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="1" file="src/chip_control.c" line="132" col="33" call-argexpr="0U" call-argvaluetype="0" call-argvalue="0"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="132" col="33" call-argexpr="&currentStatus" call-argvaluetype="7" call-argvalue="1"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="132" col="33" call-argexpr="currentStatus" call-argvaluetype="4" call-argvalue="0"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="167" col="33" call-argexpr="&currentRegB" call-argvaluetype="7" call-argvalue="1"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="167" col="33" call-argexpr="currentRegB" call-argvaluetype="4" call-argvalue="0"/><function-call call-id="src/chip_control.c:23:13" call-funcname="ChipControl_WriteRegister" call-argnr="2" file="src/chip_control.c" line="210" col="34" call-argexpr="writeBuff" call-argvaluetype="7" call-argvalue="4"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="237" col="33" call-argexpr="&currentRegB" call-argvaluetype="7" call-argvalue="1"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="237" col="33" call-argexpr="currentRegB" call-argvaluetype="4" call-argvalue="0"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="248" col="33" call-argexpr="ChargeThresholdData" call-argvaluetype="7" call-argvalue="4"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="281" col="33" call-argexpr="&currentRegB" call-argvaluetype="7" call-argvalue="1"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="281" col="33" call-argexpr="currentRegB" call-argvaluetype="4" call-argvalue="0"/><function-call call-id="src/chip_control.c:7:13" call-funcname="ChipControl_ReadRegister" call-argnr="2" file="src/chip_control.c" line="292" col="33" call-argexpr="chargeData" call-argvaluetype="7" call-argvalue="2"/><function-call call-id="src/chip_control.h:25:6" call-funcname="ChipControl_GetChargeThresholds" call-argnr="1" file="src/chip_control.c" line="302" col="41" call-argexpr="&minThreshold" call-argvaluetype="7" call-argvalue="4"/><function-call call-id="src/chip_control.h:25:6" call-funcname="ChipControl_GetChargeThresholds" call-argnr="1" file="src/chip_control.c" line="302" col="41" call-argexpr="minThreshold" call-argvaluetype="4" call-argvalue="0"/><function-call call-id="src/chip_control.h:25:6" call-funcname="ChipControl_GetChargeThresholds" call-argnr="2" file="src/chip_control.c" line="302" col="41" call-argexpr="&maxThreshold" call-argvaluetype="7" call-argvalue="4"/><function-call call-id="src/chip_control.h:25:6" call-funcname="ChipControl_GetChargeThresholds" call-argnr="2" file="src/chip_control.c" line="302" col="41" call-argexpr="maxThreshold" call-argvaluetype="4" call-argvalue="0"/><function-call call-id="src/ltc2943.h:12:6" call-funcname="LTC2943_Read" call-argnr="2" file="src/chip_control.c" line="13" col="12" my-id="src/chip_control.c:7:13" my-argnr="2"/>
+  </FileInfo>
+  <FileInfo check="Null pointer">
+    <unsafe-usage my-id="src/chip_control.c:23:13" my-argnr="2" my-argname="dataBuff" file="src/chip_control.c" line="30" col="29" value="0"/>
+  </FileInfo>
+  <FileInfo check="Uninitialized variables">
+    <unsafe-usage my-id="src/chip_control.c:23:13" my-argnr="2" my-argname="dataBuff" file="src/chip_control.c" line="30" col="29" value="0"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="ChipControl_ReadRegister" lineNumber="7"/>
+    <functiondecl functionName="ChipControl_WriteRegister" lineNumber="23"/>
+    <functiondecl functionName="ChipControl_ConvertPrescaler" lineNumber="41"/>
+    <functiondecl functionName="ChipControl_GetADCMode" lineNumber="80"/>
+    <functiondecl functionName="ChipControl_SetADCMode" lineNumber="100"/>
+    <functiondecl functionName="ChipControl_CheckTemperatureAlert" lineNumber="128"/>
+    <functiondecl functionName="ChipControl_SetChargeThresholds" lineNumber="157"/>
+    <functiondecl functionName="ChipControl_GetChargeThresholds" lineNumber="228"/>
+    <functiondecl functionName="ChipControl_CheckChargeWithinThresholds" lineNumber="270"/>
+    <functioncall functionName="ChargeThresholdData"/>
+    <functioncall functionName="ChipControl_ConvertPrescaler"/>
+    <functioncall functionName="ChipControl_GetChargeThresholds"/>
+    <functioncall functionName="ChipControl_ReadRegister"/>
+    <functioncall functionName="ChipControl_WriteRegister"/>
+    <functioncall functionName="LTC2943_Read"/>
+    <functioncall functionName="LTC2943_Write"/>
+    <functioncall functionName="adcMode"/>
+    <functioncall functionName="break"/>
+    <functioncall functionName="buffSize"/>
+    <functioncall functionName="case"/>
+    <functioncall functionName="chargeData"/>
+    <functioncall functionName="currentRegB"/>
+    <functioncall functionName="currentStatus"/>
+    <functioncall functionName="dataBuff"/>
+    <functioncall functionName="dataSize"/>
+    <functioncall functionName="default"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="maxThreshold"/>
+    <functioncall functionName="memcpy"/>
+    <functioncall functionName="minThreshold"/>
+    <functioncall functionName="newRegB"/>
+    <functioncall functionName="prescalerValue_M"/>
+    <functioncall functionName="regAddress"/>
+    <functioncall functionName="registerValue"/>
+    <functioncall functionName="switch"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="uint8_t"/>
+    <functioncall functionName="writeBuff"/>
+  </FileInfo>
+</analyzerinfo>

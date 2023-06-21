@@ -1,0 +1,34 @@
+---
+:source:
+  :path: test
+  :file: test_chip_control.c
+:successes:
+- :test: test_GetADCMode
+  :line: 21
+  :message: ''
+  :unity_test_time: 0
+- :test: test_SetADCMode
+  :line: 39
+  :message: ''
+  :unity_test_time: 0
+- :test: test_CheckTemperatureAlert
+  :line: 58
+  :message: ''
+  :unity_test_time: 0
+- :test: test_SetChargeThresholds
+  :line: 76
+  :message: ''
+  :unity_test_time: 0
+- :test: test_ConvertPrescaler
+  :line: 95
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 5
+  :passed: 5
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.0007333459980145562

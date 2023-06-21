@@ -23,8 +23,8 @@ static bool ChipControl_ReadRegister(uint8_t regAddress, uint8_t *dataBuff, uint
 static bool ChipControl_WriteRegister(uint8_t regAddress, uint8_t *dataBuff, uint8_t dataSize)
 {
     bool flag = false;
-    uint8_t buffSize = dataSize + LTC2943_REG_ADDRESS_SIZE;
-    uint8_t writeBuff[buffSize]; 
+    uint8_t const buffSize = dataSize + LTC2943_REG_ADDRESS_SIZE;
+    uint8_t writeBuff[10]; 
     writeBuff[0] = regAddress;
 
     memcpy(&(writeBuff[1]), dataBuff, dataSize);
@@ -88,7 +88,7 @@ bool ChipControl_GetADCMode(uint8_t* mode)
     }else{}
 
     // Extract the current ADC mode from the control register B, located in bits [7:6]
-    adcMode = ((adcMode & CONTROL_REG_ADC_MODE_MASK) >> CONTROL_REG_ADC_MODE_POSITION);
+    adcMode = ((adcMode & (uint8_t)CONTROL_REG_ADC_MODE_MASK) >> (uint8_t)CONTROL_REG_ADC_MODE_POSITION);
     *mode = adcMode;
 
     return true;
@@ -109,10 +109,10 @@ bool ChipControl_SetADCMode(uint8_t mode)
     }else{}
 
     // clear bits [7:6] current mode
-    newRegB = (currentRegB & ~(CONTROL_REG_ADC_MODE_MASK));
+    newRegB = (currentRegB & ~((uint8_t)CONTROL_REG_ADC_MODE_MASK));
 
     // set bits [7:6] to new mode
-    newRegB = (newRegB | (mode << CONTROL_REG_ADC_MODE_POSITION));
+    newRegB = (newRegB | (mode << (uint8_t)CONTROL_REG_ADC_MODE_POSITION));
 
     if(!ChipControl_WriteRegister(LTC2943_CONTROL_REG_B, &newRegB, LTC2943_REG_ADDRESS_SIZE))
     {
@@ -183,7 +183,7 @@ bool ChipControl_SetChargeThresholds(float minThreshold, float maxThreshold)
     }else if(registerValue < MIN_THRESHOLD)
     {
        registerValue = MIN_THRESHOLD;
-    }
+    }else{}
 
     // Set Charge Threshold High E,F (MSB, LSB) (big indian)
     registerValue &= 0xFFFF; 
@@ -199,7 +199,7 @@ bool ChipControl_SetChargeThresholds(float minThreshold, float maxThreshold)
     }else if(registerValue < MIN_THRESHOLD)
     {
        registerValue = MIN_THRESHOLD;
-    }
+    }else{}
 
     // Set Charge Threshold Low G,H (MSB, LSB) (big indian)
     registerValue &= 0xFFFF; 

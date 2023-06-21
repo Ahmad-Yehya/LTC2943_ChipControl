@@ -2,4 +2,4 @@
 - "/var/lib/gems/2.7.0/gems/ceedling-0.31.1/vendor/unity/src/unity.h"
 - src/chip_control.h
 - src/ltc2943_reg.h
-- mock_ltc2943.h
+- build/test/mocks/mock_ltc2943.h

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "chip_control.h": "c",
+        "type_traits": "c"
+    }
+}

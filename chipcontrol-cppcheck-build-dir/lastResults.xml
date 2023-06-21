@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="1.90"/>
+    <errors>
+        <error id="redundantAssignment" severity="style" msg="Variable &amp;#039;registerValue&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;registerValue&amp;#039; is reassigned a value before the old one has been used." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="194" info="registerValue is overwritten"/>
+            <location file="src/chip_control.c" line="189" info="registerValue is assigned"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;registerValue&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;registerValue&amp;#039; will never be negative so it is either pointless or an error to check if it is." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="183"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;registerValue&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;registerValue&amp;#039; will never be negative so it is either pointless or an error to check if it is." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="199"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." verbose="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="112"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." verbose="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="178"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." verbose="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="180"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." verbose="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="183"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." verbose="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="194"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." verbose="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="196"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." verbose="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="199"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." verbose="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="257"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." verbose="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="258"/>
+        </error>
+        <error id="misra-c2012-10.4" severity="style" msg="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." verbose="Required, Both operands of an operator in which the usual arithmetic conversions are performed shall have the same essential type category." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="299"/>
+        </error>
+        <error id="misra-c2012-14.4" severity="style" msg="Required, The controlling expression of an if statement and the controlling expression of an iteration-statement shall have essentially Boolean type." verbose="Required, The controlling expression of an if statement and the controlling expression of an iteration-statement shall have essentially Boolean type." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="139"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="87"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="108"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="120"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="135"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="141"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="143"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="170"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="213"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="240"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="251"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="284"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="295"/>
+        </error>
+        <error id="misra-c2012-15.5" severity="style" msg="Advisory, A function should have a single point of exit at the end." verbose="Advisory, A function should have a single point of exit at the end." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="305"/>
+        </error>
+        <error id="misra-c2012-18.8" severity="style" msg="Required, Variable-length array types shall not be used." verbose="Required, Variable-length array types shall not be used." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="27"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;ChipControl_CheckChargeWithinThresholds&amp;#039; is never used." verbose="The function &amp;#039;ChipControl_CheckChargeWithinThresholds&amp;#039; is never used." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="270"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;ChipControl_CheckTemperatureAlert&amp;#039; is never used." verbose="The function &amp;#039;ChipControl_CheckTemperatureAlert&amp;#039; is never used." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="128"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;ChipControl_GetADCMode&amp;#039; is never used." verbose="The function &amp;#039;ChipControl_GetADCMode&amp;#039; is never used." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="80"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;ChipControl_SetADCMode&amp;#039; is never used." verbose="The function &amp;#039;ChipControl_SetADCMode&amp;#039; is never used." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="100"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;ChipControl_SetChargeThresholds&amp;#039; is never used." verbose="The function &amp;#039;ChipControl_SetChargeThresholds&amp;#039; is never used." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/chip_control.c" line="157"/>
+        </error>
+        <error id="misra-c2012-2.7" severity="style" msg="Advisory, There should be no unused parameters in functions." verbose="Advisory, There should be no unused parameters in functions." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/ltc2943.h" line="12"/>
+        </error>
+        <error id="misra-c2012-2.7" severity="style" msg="Advisory, There should be no unused parameters in functions." verbose="Advisory, There should be no unused parameters in functions." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/ltc2943.h" line="14"/>
+        </error>
+        <error id="misra-c2012-5.4" severity="style" msg="Required, Macro identifiers shall be distinct." verbose="Required, Macro identifiers shall be distinct." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/ltc2943_reg.h" line="27"/>
+        </error>
+        <error id="misra-c2012-5.4" severity="style" msg="Required, Macro identifiers shall be distinct." verbose="Required, Macro identifiers shall be distinct." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/ltc2943_reg.h" line="34"/>
+        </error>
+        <error id="misra-c2012-5.4" severity="style" msg="Required, Macro identifiers shall be distinct." verbose="Required, Macro identifiers shall be distinct." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/ltc2943_reg.h" line="48"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;LTC2943_Initialise&amp;#039; is never used." verbose="The function &amp;#039;LTC2943_Initialise&amp;#039; is never used." sinceDate="٢١‏/٦‏/٢٠٢٣">
+            <location file="src/ltc2943.c" line="9"/>
+        </error>
+    </errors>
+</results>

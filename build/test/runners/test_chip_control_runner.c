@@ -12,10 +12,11 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_do_bit_man_0(void);
-extern void test_do_bit_man_1(void);
-extern void test_do_bit_man_2(void);
-extern void test_do_bit_man_3(void);
+extern void test_GetADCMode();
+extern void test_SetADCMode();
+extern void test_CheckTemperatureAlert();
+extern void test_SetChargeThresholds();
+extern void test_ConvertPrescaler();
 
 
 /*=======Mock Management=====*/
@@ -83,10 +84,11 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_chip_control.c");
-  run_test(test_do_bit_man_0, "test_do_bit_man_0", 24);
-  run_test(test_do_bit_man_1, "test_do_bit_man_1", 36);
-  run_test(test_do_bit_man_2, "test_do_bit_man_2", 47);
-  run_test(test_do_bit_man_3, "test_do_bit_man_3", 64);
+  run_test(test_GetADCMode, "test_GetADCMode", 21);
+  run_test(test_SetADCMode, "test_SetADCMode", 39);
+  run_test(test_CheckTemperatureAlert, "test_CheckTemperatureAlert", 58);
+  run_test(test_SetChargeThresholds, "test_SetChargeThresholds", 76);
+  run_test(test_ConvertPrescaler, "test_ConvertPrescaler", 95);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

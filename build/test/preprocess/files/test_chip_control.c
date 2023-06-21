@@ -1,11 +1,7 @@
-#include "mock_ltc2943.h"
+#include "build/test/mocks/mock_ltc2943.h"
 #include "src/ltc2943_reg.h"
 #include "src/chip_control.h"
 #include "/var/lib/gems/2.7.0/gems/ceedling-0.31.1/vendor/unity/src/unity.h"
-
-
-
-
 
 
 
@@ -36,37 +32,55 @@ void tearDown(void)
 
 
 
-void test_do_bit_man_0(void)
+void test_GetADCMode()
 
 {
 
-  int8_t result;
+  uint8_t mode = 0x00U;
 
-  result = do_bit_man( 15 );
 
-  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((-1)), (UNITY_INT)(UNITY_INT8 )((result)), (
 
- ((void *)0)
+  LTC2943_Write_CMockIgnoreAndReturn(25, 
 
- ), (UNITY_UINT)(28), UNITY_DISPLAY_STYLE_INT8);
+ 1
 
-  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((0x00)), (UNITY_INT)(UNITY_INT8 )((Jill)), (
+ );
 
- ((void *)0)
 
- ), (UNITY_UINT)(29), UNITY_DISPLAY_STYLE_INT8);
 
-  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((0xFF)), (UNITY_INT)(UNITY_INT8 )((Jung)), (
+  LTC2943_Read_CMockExpectAndReturn(27, 
 
  ((void *)0)
 
- ), (UNITY_UINT)(30), UNITY_DISPLAY_STYLE_INT8);
+ , &mode, 1, 
 
-  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((0x00)), (UNITY_INT)(UNITY_INT8 )((Jukk)), (
+ 1
+
+ );
+
+  LTC2943_Read_CMockIgnoreArg_address(28);
+
+  LTC2943_Read_CMockIgnoreArg_dataSize(29);
+
+  LTC2943_Read_CMockReturnMemThruPtr_dest(30, &mode, sizeof(uint8_t));
+
+
+
+  
+
+ _Bool 
+
+      status = ChipControl_GetADCMode(&mode);
+
+  do {if ((status)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(33)));}} while(0);
+
+  UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((mode)), (UNITY_INT)(UNITY_UINT8 )((0x00U)), (
 
  ((void *)0)
 
- ), (UNITY_UINT)(31), UNITY_DISPLAY_STYLE_INT8);
+ ), (UNITY_UINT)(34), UNITY_DISPLAY_STYLE_UINT8);
+
+
 
 }
 
@@ -74,39 +88,53 @@ void test_do_bit_man_0(void)
 
 
 
-
-
-void test_do_bit_man_1(void)
+void test_SetADCMode()
 
 {
 
-  int8_t result;
+  uint8_t mode = 0x01U;
 
-  result = do_bit_man( -5 );
+  uint8_t value = 0x00U;
 
-  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((-1)), (UNITY_INT)(UNITY_INT8 )((result)), (
 
- ((void *)0)
 
- ), (UNITY_UINT)(40), UNITY_DISPLAY_STYLE_INT8);
+  LTC2943_Write_CMockIgnoreAndReturn(44, 
 
-  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((0x00)), (UNITY_INT)(UNITY_INT8 )((Jill)), (
+ 1
 
- ((void *)0)
+ );
 
- ), (UNITY_UINT)(41), UNITY_DISPLAY_STYLE_INT8);
 
-  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((0xFF)), (UNITY_INT)(UNITY_INT8 )((Jung)), (
+
+  LTC2943_Read_CMockExpectAndReturn(46, 
 
  ((void *)0)
 
- ), (UNITY_UINT)(42), UNITY_DISPLAY_STYLE_INT8);
+ , &value, 1, 
 
-  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((0x00)), (UNITY_INT)(UNITY_INT8 )((Jukk)), (
+ 1
 
- ((void *)0)
+ );
 
- ), (UNITY_UINT)(43), UNITY_DISPLAY_STYLE_INT8);
+
+
+  LTC2943_Read_CMockIgnoreArg_address(48);
+
+  LTC2943_Read_CMockIgnoreArg_dataSize(49);
+
+  LTC2943_Read_CMockReturnMemThruPtr_dest(50, &value, sizeof(uint8_t));
+
+
+
+  
+
+ _Bool 
+
+      success = ChipControl_SetADCMode(mode);
+
+  do {if ((success)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(53)));}} while(0);
+
+
 
 }
 
@@ -114,49 +142,51 @@ void test_do_bit_man_1(void)
 
 
 
-void test_do_bit_man_2(void)
+void test_CheckTemperatureAlert()
 
 {
 
-  int8_t result;
-
-  int8_t position = 5;
+  uint8_t value = 0b00010000;
 
 
 
+  LTC2943_Write_CMockIgnoreAndReturn(62, 
 
+ 1
 
-  adc_read_ExpectAndReturn(35);
-
-
-
-  result = do_bit_man( position );
+ );
 
 
 
-  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((0)), (UNITY_INT)(UNITY_INT8 )((result)), (
+  LTC2943_Read_CMockExpectAndReturn(64, 
 
  ((void *)0)
 
- ), (UNITY_UINT)(57), UNITY_DISPLAY_STYLE_INT8);
+ , &value, 1, 
 
-  UnityAssertBits((UNITY_INT)(((UNITY_UINT)1 << (position))), (UNITY_INT)((UNITY_UINT)(-1)), (UNITY_INT)((Jill)), (
+ 1
 
- ((void *)0)
+ );
 
- ), (UNITY_UINT)(58));
+  LTC2943_Read_CMockIgnoreArg_address(65);
 
-  UnityAssertBits((UNITY_INT)(((UNITY_UINT)1 << (position))), (UNITY_INT)((UNITY_UINT)(0)), (UNITY_INT)((Jung)), (
+  LTC2943_Read_CMockIgnoreArg_dest(66);
 
- ((void *)0)
+  LTC2943_Read_CMockIgnoreArg_dataSize(67);
 
- ), (UNITY_UINT)(59));
+  LTC2943_Read_CMockReturnMemThruPtr_dest(68, &value, sizeof(uint8_t));
 
-  UnityAssertBits((UNITY_INT)(((UNITY_UINT)1 << (position))), (UNITY_INT)((UNITY_UINT)(-1)), (UNITY_INT)((Jukk)), (
 
- ((void *)0)
 
- ), (UNITY_UINT)(60));
+  
+
+ _Bool 
+
+      alert = ChipControl_CheckTemperatureAlert();
+
+  do {if ((alert)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(71)));}} while(0);
+
+
 
 }
 
@@ -164,50 +194,80 @@ void test_do_bit_man_2(void)
 
 
 
-void test_do_bit_man_3(void)
+void test_SetChargeThresholds()
 
 {
 
-    int8_t result;
-
-    int8_t position = 5;
+  uint8_t M = 0b00111000;
 
 
 
 
 
-    adc_read_ExpectAndReturn(10);
+  LTC2943_Write_CMockIgnoreAndReturn(81, 
+
+ 1
+
+ );
 
 
 
-    result = do_bit_man( position );
+  LTC2943_Read_CMockExpectAndReturn(83, 
+
+ ((void *)0)
+
+ , &M, 1, 
+
+ 1
+
+ );
+
+  LTC2943_Read_CMockIgnoreArg_address(84);
+
+  LTC2943_Read_CMockIgnoreArg_dest(85);
+
+  LTC2943_Read_CMockIgnoreArg_dataSize(86);
+
+  LTC2943_Read_CMockReturnMemThruPtr_dest(87, &M, sizeof(uint8_t));
 
 
 
-    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((0)), (UNITY_INT)(UNITY_INT8 )((result)), (
+  
 
-   ((void *)0)
+ _Bool 
 
-   ), (UNITY_UINT)(74), UNITY_DISPLAY_STYLE_INT8);
+      success = ChipControl_SetChargeThresholds(1.5, 4.5);
+
+  do {if ((success)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(90)));}} while(0);
 
 
 
-    UnityAssertBits((UNITY_INT)(((UNITY_UINT)1 << (position))), (UNITY_INT)((UNITY_UINT)(-1)), (UNITY_INT)((Jill)), (
+}
 
-   ((void *)0)
 
-   ), (UNITY_UINT)(76));
 
-    UnityAssertBits((UNITY_INT)(((UNITY_UINT)1 << (position))), (UNITY_INT)((UNITY_UINT)(0)), (UNITY_INT)((Jung)), (
 
-   ((void *)0)
 
-   ), (UNITY_UINT)(77));
+void test_ConvertPrescaler()
 
-    UnityAssertBits((UNITY_INT)(((UNITY_UINT)1 << (position))), (UNITY_INT)((UNITY_UINT)(-1)), (UNITY_INT)((Jukk)), (
+{
 
-   ((void *)0)
+  uint8_t M = 0b00111000;
 
-   ), (UNITY_UINT)(78));
+  uint16_t value = 0;
+
+
+
+  value = ChipControl_ConvertPrescaler(M);
+
+
+
+  UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT16)((value)), (UNITY_INT)(UNITY_UINT16)((4096)), (
+
+ ((void *)0)
+
+ ), (UNITY_UINT)(102), UNITY_DISPLAY_STYLE_UINT16);
+
+
 
 }

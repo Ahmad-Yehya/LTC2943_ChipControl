@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="3240250068">
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="LTC2943_Initialise" lineNumber="9"/>
+    <functiondecl functionName="LTC2943_Read" lineNumber="22"/>
+    <functiondecl functionName="LTC2943_Write" lineNumber="35"/>
+  </FileInfo>
+</analyzerinfo>
