@@ -6,7 +6,7 @@
 
 /// @brief Initialize the LTC2943 driver and I2C communication
 /// @return true if the initialization is successful, false otherwise
-bool LTC2943_Initialise()
+bool LTC2943_Initialise(void)
 {
     // Initialize and configure I2C driver here
 

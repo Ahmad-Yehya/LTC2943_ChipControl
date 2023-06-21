@@ -14,7 +14,7 @@
 
 _Bool 
 
-    LTC2943_Initialise();
+    LTC2943_Initialise(void);
 
 
 

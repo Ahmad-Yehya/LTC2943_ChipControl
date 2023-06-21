@@ -18,12 +18,12 @@ bool ChipControl_GetADCMode(uint8_t *mode);
 
 bool ChipControl_SetADCMode(uint8_t mode);
 
-bool ChipControl_CheckTemperatureAlert();
+bool ChipControl_CheckTemperatureAlert(void);
 
 bool ChipControl_SetChargeThresholds(float minThreshold, float maxThreshold);
 
 bool ChipControl_GetChargeThresholds(float *minThreshold, float *maxThreshold);
 
-bool ChipControl_CheckChargeWithinThresholds();
+bool ChipControl_CheckChargeWithinThresholds(void);
 
 #endif /* CHIP_CONTROL_H */

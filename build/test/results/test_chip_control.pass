@@ -19,16 +19,12 @@
   :line: 76
   :message: ''
   :unity_test_time: 0
-- :test: test_ConvertPrescaler
-  :line: 95
-  :message: ''
-  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 5
-  :passed: 5
+  :total: 4
+  :passed: 4
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0007333459980145562
+:time: 0.0007998440014489461

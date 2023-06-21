@@ -109,7 +109,7 @@ bool ChipControl_SetADCMode(uint8_t mode)
     }else{}
 
     // clear bits [7:6] current mode
-    newRegB = (currentRegB & ~((uint8_t)CONTROL_REG_ADC_MODE_MASK));
+    newRegB = (currentRegB & ~(CONTROL_REG_ADC_MODE_MASK));
 
     // set bits [7:6] to new mode
     newRegB = (newRegB | (mode << (uint8_t)CONTROL_REG_ADC_MODE_POSITION));
@@ -125,7 +125,7 @@ bool ChipControl_SetADCMode(uint8_t mode)
 
 /// @brief Check if there is a temperature alert on the LTC2943 chip
 /// @return true if there is a temperature alert, false otherwise
-bool ChipControl_CheckTemperatureAlert()
+bool ChipControl_CheckTemperatureAlert(void)
 {
     uint8_t currentStatus;
 
@@ -160,8 +160,7 @@ bool ChipControl_SetChargeThresholds(float minThreshold, float maxThreshold)
     uint16_t prescaler_M;
     uint8_t currentRegB;
     uint8_t writeBuff[4];
-
-    uint8_t *tmpPtr = (uint8_t*)&registerValue;
+    uint8_t *tmpPtr;
 
     // Read Control Register (B)
     if(!ChipControl_ReadRegister(LTC2943_CONTROL_REG_B, &currentRegB, LTC2943_REG_ADDRESS_SIZE))
@@ -186,6 +185,7 @@ bool ChipControl_SetChargeThresholds(float minThreshold, float maxThreshold)
     }else{}
 
     // Set Charge Threshold High E,F (MSB, LSB) (big indian)
+    tmpPtr = (uint8_t*)&registerValue;
     registerValue &= 0xFFFF; 
     writeBuff[0] = tmpPtr[1];
     writeBuff[1] = tmpPtr[0];
@@ -267,13 +267,13 @@ bool ChipControl_GetChargeThresholds(float* minThreshold, float* maxThreshold)
  *  (Refere to LTC2943 datasheet)
  */
 /// @return Return true if the charge is within the thresholds, false otherwise
-bool ChipControl_CheckChargeWithinThresholds()
+bool ChipControl_CheckChargeWithinThresholds(void)
 {
     uint16_t regCharge;
     uint16_t prescaler_M;
     float minThreshold;
     float maxThreshold;
-    float charge;
+    double charge;
     uint8_t currentRegB;
     uint8_t chargeData[2];
     

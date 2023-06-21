@@ -16,7 +16,6 @@ extern void test_GetADCMode();
 extern void test_SetADCMode();
 extern void test_CheckTemperatureAlert();
 extern void test_SetChargeThresholds();
-extern void test_ConvertPrescaler();
 
 
 /*=======Mock Management=====*/
@@ -88,7 +87,6 @@ int main(void)
   run_test(test_SetADCMode, "test_SetADCMode", 39);
   run_test(test_CheckTemperatureAlert, "test_CheckTemperatureAlert", 58);
   run_test(test_SetChargeThresholds, "test_SetChargeThresholds", 76);
-  run_test(test_ConvertPrescaler, "test_ConvertPrescaler", 95);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

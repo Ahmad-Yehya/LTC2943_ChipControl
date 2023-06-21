@@ -243,31 +243,3 @@ void test_SetChargeThresholds()
 
 
 }
-
-
-
-
-
-void test_ConvertPrescaler()
-
-{
-
-  uint8_t M = 0b00111000;
-
-  uint16_t value = 0;
-
-
-
-  value = ChipControl_ConvertPrescaler(M);
-
-
-
-  UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT16)((value)), (UNITY_INT)(UNITY_UINT16)((4096)), (
-
- ((void *)0)
-
- ), (UNITY_UINT)(102), UNITY_DISPLAY_STYLE_UINT16);
-
-
-
-}
