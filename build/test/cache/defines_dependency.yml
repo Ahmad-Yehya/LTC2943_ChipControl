@@ -1,0 +1,5 @@
+---
+build/test/mocks/mock_ltc2943.c:
+- TEST
+src/chip_control.c:
+- TEST
