@@ -216,8 +216,8 @@ bool ChipControl_SetChargeThresholds(float minThreshold, float maxThreshold)
  *  charge = qLSB / ((0.34 * (50 / RSENSE) * (prescaler_M / 4096)) 
  *  (Refere to LTC2943 datasheet)
  */
-/// @param minThreshold pointer to Charge Threshold Low G,H
-/// @param maxThreshold 
+/// @param minThreshold pointer to Charge Threshold Low G,H value
+/// @param maxThreshold pointer to Charge Threshold High E,F value
 /// @return true the operation is successful, false otherwise
 bool ChipControl_GetChargeThresholds(float* minThreshold, float* maxThreshold)
 {
