@@ -28,7 +28,7 @@ First, go into the project directory where `project.yml` file resides. Then ente
 
 ```
 ceedling test:all                       //build and test the test cases
-$ceedling gcov:all		                //generate coverage result
+ceedling gcov:all		                //generate coverage result
 ```
 
 
@@ -43,7 +43,7 @@ bool LTC2973_Write(uint8_t address, uint8_t *src, uint8_t dataSize);    // Write
 # ChipControl Module
 The package contains a number of critical functions:
 
-## Mode setting
+## Mode Setting
 The driver can be configured for a number of modes: Automatic, Scan, Manual, and Sleep. The driver allows monitorng and setting of the current mode to change the driver's operating mode. The modes have the following behaviours:
  
 * Automatic
@@ -57,7 +57,7 @@ The driver maintains a number of operational and survival thresholds that can be
 ## Alerting
 The module allows for automated checking of measurements against configured thresholds in Automatic and Scan modes. In manual mode, the measurement alerts can be polled.
 
-# RTOS configuration
+# RTOS Configuration
 When handling the IO interface of the LTC2943 chip in a Real-Time Operating System (RTOS) environment, there are a few considerations to keep in mind. Here's a detailed and specific approach for handling the IO interface of the LTC2943 chip within the Chip Control module in an RTOS environment:
 
 1. Task Design: 
@@ -75,7 +75,7 @@ When handling the IO interface of the LTC2943 chip in a Real-Time Operating Syst
     * Define an interrupt service routine (ISR) to handle the chip interrupts promptly.
     * Within the ISR, signal a semaphore or set a flag to notify the Chip Control task about the occurrence of the interrupt.
 
-4.Time Management:
+4. Time Management:
     * Utilize timers or periodic tasks provided by the RTOS to schedule regular communication with the LTC2943 chip.
     * Configure a timer to trigger at the desired sampling rate or interval for data collection or status monitoring.
     * When the timer expires, the Chip Control task is activated to perform the necessary IO operations on the chip.
