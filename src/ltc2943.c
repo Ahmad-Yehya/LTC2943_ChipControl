@@ -22,6 +22,9 @@ bool LTC2943_Initialise(void)
 bool LTC2943_Read(uint8_t address, uint8_t *dest, uint8_t dataSize)
 {
     // Use I2C driver's read function to read 'dataSize' bytes from the chip at 'address'
+    (void)address;
+    (void)dest;
+    (void)dataSize;
 
     return true;
 }
@@ -35,6 +38,9 @@ bool LTC2943_Read(uint8_t address, uint8_t *dest, uint8_t dataSize)
 bool LTC2943_Write(uint8_t address, uint8_t *src, uint8_t dataSize)
 {
     // Use I2C driver's write function to write 'dataSize' bytes from the 'src' buffe to the chip at 'address'
+    (void)address;
+    (void)src;
+    (void)dataSize;
 
     return true;
 }

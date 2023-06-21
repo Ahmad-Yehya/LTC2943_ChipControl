@@ -31,6 +31,9 @@ ceedling test:all                       //build and test the test cases
 ceedling gcov:all		                //generate coverage result
 ```
 
+# Build
+To build the project, navigate to the project's root directory in the terminal and run the command `make`. It will compile the source files, link them with the application file, and generate the executable named "app". If you want to clean the project run `make clean`. 
+
 
 # Device APIs
 The device provides a number of C APIs that can be used to access measurements:

@@ -179,9 +179,6 @@ bool ChipControl_SetChargeThresholds(float minThreshold, float maxThreshold)
     if(registerValue > MAX_THRESHOLD)
     {
         registerValue = MAX_THRESHOLD;
-    }else if(registerValue < MIN_THRESHOLD)
-    {
-       registerValue = MIN_THRESHOLD;
     }else{}
 
     // Set Charge Threshold High E,F (MSB, LSB) (big indian)
@@ -196,9 +193,6 @@ bool ChipControl_SetChargeThresholds(float minThreshold, float maxThreshold)
     if(registerValue > MAX_THRESHOLD)
     {
         registerValue = MAX_THRESHOLD;
-    }else if(registerValue < MIN_THRESHOLD)
-    {
-       registerValue = MIN_THRESHOLD;
     }else{}
 
     // Set Charge Threshold Low G,H (MSB, LSB) (big indian)
