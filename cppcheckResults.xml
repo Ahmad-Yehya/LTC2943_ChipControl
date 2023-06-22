@@ -3,10 +3,6 @@
     <cppcheck version="1.90"/>
     <errors>
         <error id="redundantAssignment" severity="style" msg="Variable &amp;#039;registerValue&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;registerValue&amp;#039; is reassigned a value before the old one has been used." sinceDate="٢٢‏/٦‏/٢٠٢٣">
-            <location file="src/chip_control.c" line="186" info="registerValue is assigned"/>
-            <location file="src/chip_control.c" line="191" info="registerValue is overwritten"/>
-        </error>
-        <error id="redundantAssignment" severity="style" msg="Variable &amp;#039;registerValue&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;registerValue&amp;#039; is reassigned a value before the old one has been used." sinceDate="٢٢‏/٦‏/٢٠٢٣">
             <location file="src/chip_control.c" line="191" info="registerValue is overwritten"/>
             <location file="src/chip_control.c" line="186" info="registerValue is assigned"/>
         </error>

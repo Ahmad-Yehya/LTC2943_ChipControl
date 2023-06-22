@@ -4,6 +4,9 @@
 
 
 // Function to perform the LTC2943 I2C Read Protocol 
+
+static bool ChipControl_GetChargeThresholds(float* minThreshold, float* maxThreshold);
+
 static bool ChipControl_ReadRegister(uint8_t regAddress, uint8_t *dataBuff, uint8_t dataSize)
 {
     bool flag = false;
@@ -109,7 +112,7 @@ bool ChipControl_SetADCMode(uint8_t mode)
     }else{}
 
     // clear bits [7:6] current mode
-    newRegB = (currentRegB & ~(CONTROL_REG_ADC_MODE_MASK));
+    newRegB = (currentRegB & (~(CONTROL_REG_ADC_MODE_MASK)));
 
     // set bits [7:6] to new mode
     newRegB = (newRegB | (mode << (uint8_t)CONTROL_REG_ADC_MODE_POSITION));
@@ -136,12 +139,9 @@ bool ChipControl_CheckTemperatureAlert(void)
     }else{}
     
     // Check if temperature alert bit is set
-    if((currentStatus & STATUS_REG_TEMPERATURE_ALERT_BIT_4))
-    {
-        return true;
-    }else{
-        return false;
-    }
+    bool isAlert = (currentStatus && STATUS_REG_TEMPERATURE_ALERT_BIT_4);
+    
+    return isAlert;
     
 }
 
@@ -174,9 +174,9 @@ bool ChipControl_SetChargeThresholds(float minThreshold, float maxThreshold)
     prescaler_M = ChipControl_ConvertPrescaler(currentRegB);
 
     // Calculate register value for charge maximum threshold
-    registerValue = maxThreshold * (0.34 * 50 / R_SENSE) * (prescaler_M / 4096);
+    registerValue = (uint32_t)(maxThreshold * (0.34 * 50 / R_SENSE) * (prescaler_M / 4096));
 
-    if(registerValue > MAX_THRESHOLD)
+    if(registerValue > (uint32_t)MAX_THRESHOLD)
     {
         registerValue = MAX_THRESHOLD;
     }else{}
@@ -188,9 +188,9 @@ bool ChipControl_SetChargeThresholds(float minThreshold, float maxThreshold)
     writeBuff[1] = tmpPtr[0];
 
     // Calculate register value for charge minimum threshold
-    registerValue = minThreshold * (0.34 * 50 / R_SENSE) * (prescaler_M / 4096);
+    registerValue = (uint32_t)(minThreshold * (0.34 * 50 / R_SENSE) * (prescaler_M / 4096));
 
-    if(registerValue > MAX_THRESHOLD)
+    if(registerValue > (uint32_t)MAX_THRESHOLD)
     {
         registerValue = MAX_THRESHOLD;
     }else{}
@@ -219,7 +219,7 @@ bool ChipControl_SetChargeThresholds(float minThreshold, float maxThreshold)
 /// @param minThreshold pointer to Charge Threshold Low G,H value
 /// @param maxThreshold pointer to Charge Threshold High E,F value
 /// @return true the operation is successful, false otherwise
-bool ChipControl_GetChargeThresholds(float* minThreshold, float* maxThreshold)
+static bool ChipControl_GetChargeThresholds(float* minThreshold, float* maxThreshold)
 {
     uint16_t regMinthreshold;
     uint16_t regMaxthreshold;
@@ -248,8 +248,8 @@ bool ChipControl_GetChargeThresholds(float* minThreshold, float* maxThreshold)
     regMaxthreshold = (ChargeThresholdData[0] << 8) | ChargeThresholdData[1];
     regMinthreshold = (ChargeThresholdData[2] << 8) | ChargeThresholdData[3];
 
-    *maxThreshold = regMaxthreshold / ((0.34 * 50 / R_SENSE) * (prescaler_M / 4096));
-    *minThreshold = regMinthreshold / ((0.34 * 50 / R_SENSE) * (prescaler_M / 4096));
+    *maxThreshold = (float)(regMaxthreshold / ((0.34 * 50 / R_SENSE) * (prescaler_M / 4096)));
+    *minThreshold = (float)(regMinthreshold / ((0.34 * 50 / R_SENSE) * (prescaler_M / 4096)));
     return true;
 }
 
@@ -290,7 +290,7 @@ bool ChipControl_CheckChargeWithinThresholds(void)
     }else{}
     
     regCharge = (chargeData[0] << 8) | chargeData[1];
-    charge = regCharge / ((0.34 * 50 / R_SENSE) * (prescaler_M / 4096));
+    charge = (double)(regCharge / ((0.34 * 50 / R_SENSE) * (prescaler_M / 4096)));
 
     // Retrieve charge thresholds
     if (!ChipControl_GetChargeThresholds(&minThreshold, &maxThreshold))

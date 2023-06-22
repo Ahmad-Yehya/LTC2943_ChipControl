@@ -1,5 +1,0 @@
-{"column": 6, "severity": "style", "file": "src/ltc2943.h", "extra": "Undefined", "linenr": 12, "message": "Advisory, There should be no unused parameters in functions.", "errorId": "c2012-2.7", "addon": "misra"}
-{"column": 6, "severity": "style", "file": "src/ltc2943.h", "extra": "Undefined", "linenr": 14, "message": "Advisory, There should be no unused parameters in functions.", "errorId": "c2012-2.7", "addon": "misra"}
-{"column": 0, "severity": "style", "file": "src/ltc2943_reg.h", "extra": "Undefined", "linenr": 27, "message": "Required, Macro identifiers shall be distinct.", "errorId": "c2012-5.4", "addon": "misra"}
-{"column": 0, "severity": "style", "file": "src/ltc2943_reg.h", "extra": "Undefined", "linenr": 34, "message": "Required, Macro identifiers shall be distinct.", "errorId": "c2012-5.4", "addon": "misra"}
-{"column": 0, "severity": "style", "file": "src/ltc2943_reg.h", "extra": "Undefined", "linenr": 48, "message": "Required, Macro identifiers shall be distinct.", "errorId": "c2012-5.4", "addon": "misra"}

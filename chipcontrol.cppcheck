@@ -8,6 +8,7 @@
     <max-ctu-depth>10</max-ctu-depth>
     <paths>
         <dir name="src"/>
+        <dir name="Application"/>
     </paths>
     <libraries>
         <library>cppcheck-lib</library>

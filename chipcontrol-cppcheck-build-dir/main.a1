@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="3353864295">
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="main" lineNumber="6"/>
+    <functioncall functionName="LTC2943_Initialise"/>
+  </FileInfo>
+</analyzerinfo>
